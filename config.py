@@ -46,7 +46,7 @@ RETRY_MAX_WAIT = float(os.getenv("RETRY_MAX_WAIT", "10.0"))
 MAX_CONCURRENT_REQUESTS = int(os.getenv("MAX_CONCURRENT_REQUESTS", "5"))
 
 # Paramètres Email
-EMAIL_SMTP_SERVER = "localhost"
-EMAIL_SMTP_PORT = 25
-EMAIL_SENDER = "servinfo@bis-sorbonne.fr"
-EMAIL_RECIPIENTS = "seclement@bis-sorbonne.fr"
+EMAIL_SMTP_SERVER = os.getenv("EMAIL_SMTP_SERVER")
+EMAIL_SMTP_PORT = int(os.getenv("EMAIL_SMTP_PORT"))
+EMAIL_SENDER = os.getenv("EMAIL_SENDER")
+EMAIL_RECIPIENTS = os.getenv("EMAIL_RECIPIENTS")
