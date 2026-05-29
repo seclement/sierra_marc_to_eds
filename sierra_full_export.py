@@ -287,7 +287,7 @@ class SierraAPIAsync:
                 return True
             return False
         except Exception as e:
-            logger.error(f"Erreur lors du traitement de l'intervalle {start_id}-{end_id}: {e}")
+            logger.exception(f"Erreur lors du traitement de l'intervalle {start_id}-{end_id}: {e}")
             return False
 
     async def fetch_bibs_async(self, start_id: Optional[int] = None, auto_merge: bool = True) -> None:
