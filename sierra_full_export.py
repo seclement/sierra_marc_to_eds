@@ -32,6 +32,8 @@ from config import (
     MAX_CONCURRENT_REQUESTS,
     EMAIL_RECIPIENTS,
     DAYS_TO_KEEP_LOGS,
+    TRUST_ENV,
+    PROXY
 )
 
 # Chemin absolu vers les scripts
@@ -115,7 +117,11 @@ class SierraAPIAsync:
         os.makedirs(self.marc_output_dir, exist_ok=True)
 
     async def __aenter__(self):
-        self.client = httpx.AsyncClient(timeout=self.timeout)
+        self.client = httpx.AsyncClient(
+            timeout=self.timeout,
+            trust_env=TRUST_ENV,
+            proxy=PROXY,
+        )
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):

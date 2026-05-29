@@ -45,6 +45,12 @@ RETRY_MAX_WAIT = float(os.getenv("RETRY_MAX_WAIT", "10.0"))
 
 MAX_CONCURRENT_REQUESTS = int(os.getenv("MAX_CONCURRENT_REQUESTS", "5"))
 
+# Paramètres de Proxy
+# Détermine si httpx doit lire les variables d'environnement de proxy (HTTP_PROXY, HTTPS_PROXY, etc.)
+TRUST_ENV = os.getenv("TRUST_ENV", "True").lower() in ("true", "1", "yes")
+# Permet de définir un proxy spécifique si besoin (ex: "http://10.10.1.10:3128")
+PROXY = os.getenv("PROXY")
+
 # Paramètres Email
 EMAIL_SMTP_SERVER = os.getenv("EMAIL_SMTP_SERVER")
 EMAIL_SMTP_PORT = int(os.getenv("EMAIL_SMTP_PORT"))

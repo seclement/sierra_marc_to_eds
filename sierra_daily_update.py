@@ -20,7 +20,9 @@ from config import (
     TIMEOUT_READ,
     TIMEOUT_WRITE,
     TIMEOUT_POOL,
-    EMAIL_RECIPIENTS
+    EMAIL_RECIPIENTS,
+    TRUST_ENV,
+    PROXY
 )
 
 OUTPUT_FILENAME = "daily_marc.mrc"
@@ -80,7 +82,9 @@ class SierraAPISync:
                 read=TIMEOUT_READ,
                 write=TIMEOUT_WRITE,
                 pool=TIMEOUT_POOL,
-            )
+            ),
+            trust_env=TRUST_ENV,
+            proxy=PROXY,
         )
         self.marc_output_dir = os.path.join(BASE_PROCESSING_DIR, os.path.basename(MARC_OUTPUT_DIR))
         # Création du répertoire de base s'il n'existe pas
