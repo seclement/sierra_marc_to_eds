@@ -64,7 +64,7 @@ Rapport d'exécution Sierra MARC - {today}
         # Exécuter le script d'envoi d'email
         logger.info(f"Envoi du rapport par email à {recipients}")
         subprocess.run([
-            "python3", 
+            sys.executable, 
             email_script, 
             "--subject", subject, 
             "--message", message, 

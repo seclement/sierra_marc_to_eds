@@ -217,7 +217,7 @@ class SierraAPISync:
     def transfer_file(self, local_file_path, remote_directory):
         """Transfère un fichier sur le serveur SFTP."""
         try:
-            subprocess.run(["python3", sftp_script, local_file_path, remote_directory], check=True)
+            subprocess.run([sys.executable, sftp_script, local_file_path, remote_directory], check=True)
             logger.info(f"Fichier {local_file_path} transféré vers {remote_directory} sur le serveur SFTP.")
         except subprocess.CalledProcessError as e:
             logger.error(f"Erreur lors du transfert du fichier: {e}")
