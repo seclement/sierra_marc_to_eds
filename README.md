@@ -14,7 +14,7 @@ A Python-based system for exporting MARC records from Sierra ILS and transferrin
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.10+
 - Required Python packages (see `requirements.txt`)
 - Sierra API credentials
 - SFTP server access
@@ -23,12 +23,17 @@ A Python-based system for exporting MARC records from Sierra ILS and transferrin
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/sierra-marc-export.git
-   cd sierra-marc-export
+   git clone https://github.com/seclement/sierra_marc_to_eds.git
+   cd sierra_marc_to_eds
 
 2. Install required packages:
    ```bash
    pip install -r requirements.txt
+
+> **Note:** Package versions are pinned in `requirements.txt` for reproducibility. 
+> If you need to upgrade a dependency (e.g. `paramiko`), test SFTP connectivity 
+> afterwards — some SFTP servers only support legacy algorithms (e.g. `ssh-rsa`) 
+> that newer paramiko releases have dropped.
 
 3. Create a .env file based on the provided .env.sample :
    ```bash
